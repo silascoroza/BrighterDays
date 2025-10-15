@@ -1,0 +1,207 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Brighter Days Photography PH — BG</title>
+  <meta name="description" content="Brighter Days Photography PH — premium event & portrait photography. Book shoots, generate themes, and manage bookings." />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <div class="mark">BG</div>
+      <div>
+        <div class="subtitle">Brighter Days Photography PH</div>
+        <div class="headerT">Turning Moments into Masterpieces</div>
+      </div>
+    </div>
+    <nav>
+      <span class="contact-info">Contact: +63 977 217 9168 &nbsp;|&nbsp; mr.brightshots@gmail.com</span>
+      <button class="btn" id="aboutLink">About Us</a>
+      <button class="btn" id="loginBtn">Login</button>
+      <button class="btn" id="registerBtn">Register</button>
+    </nav>
+  </header>
+
+  <div class="container">
+    <aside class="sidebar">
+      <h4>Menu</h4>
+      <ul class="menu">
+        <li><button class="btn" id="bookNow">Book Now</button></li>
+        <li><button class="btn" id="myBookings">My Bookings</button></li>
+        <li><button class="btn" id="packages">Packages</button></li>
+        <li><button class="btn" id="support">Support</button></li>
+      </ul>
+      <div class="user-label">Logged in as <span id="userLabel">Guest</span></div>
+    </aside>
+
+    <main>
+      <section id="homePage">
+        <div class="hero">
+          <div class="hero-left">
+            <div class="eyebrow">Featured</div>
+            <h1>Capture what matters — elegantly.</h1>
+            <p class="lead">Brighter Days Photography PH crafts memorable visuals for weddings, debuts, corporate events and intimate portraits. Use our booking system to generate a theme and reserve your date in a few simple steps.</p>
+            <div class="gallery" id="featuredGallery"></div>
+          </div>
+          <div class="panel">
+            <div class="availability">
+              <div>
+                <div class="tiny">Next Available</div>
+                <div class="date">Oct 20, 2025</div>
+              </div>
+              <button class="btn btn-primary" id="bookNowCta">Book Now</button>
+            </div>
+            <hr />
+            <div class="why">
+              <strong>Why clients choose us</strong>
+              <ul>
+                <li>Curated, editorial-style imagery</li>
+                <li>Personalized creative direction</li>
+                <li>Transparent packages & secure payments</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="panel">
+          <h3>About Us</h3>
+          <p>Brighter Days Photography PH is a boutique photography studio that blends creative direction with polished execution. Our platform adds AI-assisted theme generation and a straightforward booking flow so clients can visualize, confirm and pay with confidence.</p>
+https://github.com/silascoroza/BrighterDays.git        </div>
+      </section>
+
+      <section id="bookingFlow" class="hidden">
+        <div class="panel">
+          <div class="steps">
+            <div class="step active" id="s-step">1. Theme</div>
+            <div class="step" id="s-package">2. Package</div>
+            <div class="step" id="s-confirm">3. Confirm</div>
+            <div class="step" id="s-pay">4. Payment</div>
+          </div>
+          <div id="stepContent">
+            <div id="stepTheme">
+              <h4>Theme Generation</h4>
+              <p class="tiny">Describe the visual concept you'd like — mood, colors, props, and any reference ideas.</p>
+              <textarea id="themePrompt" placeholder="e.g. soft golden hour family portrait with pastel balloons and vintage props" rows="4"></textarea>
+              <div class="actions">
+                <button class="btn btn-primary" id="generateTheme">Generate</button>
+                <button class="btn" id="skipGen">Use a sample theme</button>
+              </div>
+              <div id="themePreview" class="hidden">
+                <div class="preview-title">Preview</div>
+                <div id="previewImages" class="preview-grid"></div>
+                <div class="actions">
+                  <button class="btn" id="rePrompt">Re-prompt</button>
+                  <button class="btn btn-primary" id="confirmTheme">Confirm theme</button>
+                </div>
+              </div>
+            </div>
+
+            <div id="stepPackage" class="hidden">
+              <h4>Package Confirmation</h4>
+              <form id="packageForm">
+                <label class="tiny">Preferred date</label>
+                <input type="date" id="shootDate" required />
+                <label class="tiny">Style / Theme</label>
+                <select id="chooseStyle">
+                  <option>Editorial / Magazine</option>
+                  <option>Soft & Dreamy</option>
+                  <option>Editorial Romantic</option>
+                  <option>Vibrant Lifestyle</option>
+                </select>
+                <label class="tiny">Package</label>
+                <select id="choosePackage">
+                  <option value="silver">Silver — 1 hour / 50 edited photos (₱5,000)</option>
+                  <option value="gold">Gold — 2 hours / 100 edited photos (₱9,000)</option>
+                  <option value="platinum">Platinum — Half day / 250 edited photos (₱18,000)</option>
+                </select>
+                <div class="actions">
+                  <button class="btn" id="backToTheme">Back</button>
+                  <button class="btn btn-primary" id="toConfirm">Next</button>
+                </div>
+              </form>
+            </div>
+
+            <div id="stepConfirm" class="hidden">
+              <h4>Event Confirmation</h4>
+              <div id="confirmSummary" class="summary"></div>
+              <div class="actions">
+                <button class="btn" id="backToPackage">Back</button>
+                <button class="btn btn-primary" id="toPayment">Proceed to Payment</button>
+              </div>
+            </div>
+
+            <div id="stepPayment" class="hidden">
+              <h4>Payment</h4>
+              <p class="tiny">We use a secure payment partner. (Demo only.)</p>
+              <form id="paymentForm">
+                <input placeholder="Cardholder name" required />
+                <input placeholder="Card number (mock)" required />
+                <div class="split">
+                  <input placeholder="MM/YY" required />
+                  <input placeholder="CVC" required />
+                </div>
+                <div class="actions">
+                  <button class="btn" id="backToConfirm">Back</button>
+                  <button class="btn btn-primary" id="payNow">Pay</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="thankYou" class="hidden">
+        <div class="panel center">
+          <h2>Thank you!</h2>
+          <p class="tiny">Your booking is confirmed. A receipt has been sent to your email and your booking appears in My Bookings.</p>
+          <button class="btn btn-primary" id="toHome">Return to Homepage</button>
+        </div>
+      </section>
+
+      <section id="myBookingsSection" class="hidden">
+        <div class="panel">
+          <h3>My Bookings</h3>
+          <div id="bookingsList"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    © Brighter Days Photography PH — All rights reserved • Designed with care
+  </footer>
+
+  <!-- Login/Register Overlay -->
+  <div id="overlay" class="hidden" role="dialog" aria-modal="true">
+    <div id="overlayContent">
+      <button id="closeOverlayBtn" class="close-btn">×</button>
+      <!-- JavaScript dynamically injects login/register form here -->
+    </div>
+  </div>
+
+  <!-- Reusable Modal (for messages or thank-you popups) -->
+  <div id="modal" class="hidden" role="dialog" aria-modal="true">
+    <div class="modal-card" id="modalContent"></div>
+  </div>
+
+  <script src="./assets/js/script.js"></script>
+
+  <script>
+    // Functional close button for overlay
+    document.addEventListener('DOMContentLoaded', () => {
+      const overlay = document.getElementById('overlay');
+      const closeBtn = document.getElementById('closeOverlayBtn');
+      if (closeBtn && overlay) {
+        closeBtn.addEventListener('click', () => {
+          overlay.classList.add('hidden');
+        });
+      }
+    });
+  </script>
+</body>
+</html>
