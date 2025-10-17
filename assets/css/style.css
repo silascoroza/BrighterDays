@@ -1,124 +1,325 @@
-:root {
-    --accent: #0b0c0e;
-    --muted: #f0f3f9;
-    --gold: #c9a34b;
-    --bg: #fbfbfb;
+:root{
+    --accent:#0b0c0e; --muted:#6b7280; --gold:#c9a34b; --bg:#fbfbfb;
   }
-  .title{
-    color: wheat
-    ;
-  }
-  * {
-    box-sizing: border-box;
-  }
+  /* ================================
+     🌟 HEADER — Professional Sales Look
+     ================================ */
+     header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 42px;
+      background: linear-gradient(90deg, #c9a34b 0%, #e7ba40 50%, #d1a23d 100%);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: none;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .logo .mark {
+      width: 58px;
+      height: 58px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #0b0c0e, #1f2937);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      font-family: "Georgia", serif;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      transition: transform 0.3s ease;
+    }
+    
+    .logo .mark:hover {
+      transform: rotate(-5deg) scale(1.05);
+    }
+    
+    .title {
+      font-family: "Georgia", serif;
+      font-weight: 700;
+      font-size: 22px;
+      color: #0b0c0e;
+      letter-spacing: 0.5px;
+    }
+    
+    .subtitle {
+      font-size: 14px;
+      color: rgba(0, 0, 0, 0.6);
+    }
+    
+    /* ================================
+       🧭 NAVIGATION BUTTONS — Elegant & Modern
+       ================================ */
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    
+    nav a,
+    nav button {
+      font-weight: 600;
+      font-size: 15px;
+      padding: 10px 18px;
+      border-radius: 24px;
+      border: none;
+      background: linear-gradient(135deg, #fff, #f5f3ef);
+      color: #0b0c0e;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    nav a:hover,
+    nav button:hover {
+      background: linear-gradient(135deg, #0b0c0e, #1f2937);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+    
+    nav .btn-primary {
+      background: linear-gradient(135deg, #040302, #e7ba40);
+      color: #fff;
+      font-weight: 700;
+      box-shadow: 0 4px 12px rgba(201, 163, 75, 0.4);
+    }
+    
+    nav .btn-primary:hover {
+      background: linear-gradient(135deg, #b9922e, #0c0b09);
+      transform: translateY(-2px) scale(1.03);
+    }
+    
+    /* Optional subtle contact info style */
+    .contact-info {
+      font-size: 14px;
+      color: #333;
+      opacity: 0.8;
+      margin-left: 12px;
+    }
+    
   
-  body {
-    font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    margin: 0;
-    color: var(--accent);
-    background-image: url(../img/bg.jpg);
+  /* Base */
+  *{box-sizing:border-box}
+  body{
+    margin:0; 
+    font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial;
+    color:var(--accent); 
+    background-image: url(../img/brighter.jpg);
     background-repeat: no-repeat;
-    background-size: cover;       /* make it fill the whole screen */
-    background-position: center;  /* center the image */
+    background-size: cover;
+    background-position: center;
   }
   
-  /* ===============================
-     HEADER + NAVIGATION
-  =============================== */
-  header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 18px 32px;
-    border-bottom: 1px solid #eee;
-    background-image: url(../img/bg.jpg);
+  /* Header */
+  header{
+    display:flex; 
+    align-items:center; 
+    justify-content:space-between;
+    padding:22px 32px; 
+    border-bottom:1px solid #eee; 
+    background:rgb(231, 186, 64);
   }
-  
-  .logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-weight: 700;
+  .logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-weight:700
   }
-  
-  .logo .mark {
-    width: 56px;
-    height: 56px;
-    border-radius: 8px;
-    background: linear-gradient(135deg, #111827, #374151);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    font-family: Georgia, serif;
+  .logo .mark{
+    width:56px;
+    height:56px;
+    border-radius:8px;
+    background:linear-gradient(135deg,#111827,#374151);
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:20px;
+    font-family:Georgia,serif;
   }
+  .subtitle{font-size:14px;color:var(--muted)}
+  .title{font-family:Georgia,serif;font-weight:600}
   
-  .subtitle {
-    font-size: 14px;
-    color: var(--muted);
+  /* Nav */
+  nav a, nav button { margin-left:14px; }
+  .contact-info{margin-right:22px;color:var(--muted);font-size:14px}
+  
+  /* Guest landing */
+  .guest-home{
+    min-height:calc(100vh - 88px); 
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:40px 20px;
+    background:linear-gradient(180deg, rgba(0,0,0,0.55), rgba(10,10,12,0.9));
+    color:#fff;
   }
-  
-  .title {
-    font-family: Georgia, serif;
-    font-weight: 600;
+  .guest-card{
+    background:rgba(255, 252, 252, 0.03); 
+    border:1px solid rgba(248, 174, 0, 0.18);
+    padding:48px 36px; 
+    border-radius:18px; 
+    max-width:720px; 
+    width:100%; 
+    text-align:center;
+    box-shadow:0 20px 60px rgba(0,0,0,0.6);
   }
-  
-  nav a {
-    color: var(--muted);
-    text-decoration: none;
-    margin-left: 18px;
+  .guest-logo{font-family:Georgia,serif;font-size:64px;color:var(--gold);margin-bottom:12px}
+  .guest-sub{color:rgba(245,245,245,0.7);margin-bottom:24px}
+  .guest-actions{
+    display:flex;
+    gap:15px;
+    justify-content:center
   }
+  .guest-actions .btn{border-color:rgba(201,163,75,0.4);color:var(--gold)}
+  .guest-actions .btn:hover{background:var(--gold);color:#0b0c0e}
   
-  .contact-info {
-    margin-right: 22px;
-    color: var(--muted);
-    font-size: 14px;
-  }
-  
-  /* ===============================
-     LAYOUT
-  =============================== */
-  .container {
-    display: flex;
-    height: calc(100vh - 88px);
-  }
-  
-  .sidebar {
-    width: 220px;
-    background-image: url(../img/bgg.jpg);
-    border-right: 1px solid #f0f0f0;
-    padding: 28px;
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-  }
-  
-  .sidebar h4 {
-    margin: 0;
-    font-family: Georgia, serif;
-    color: var(--accent);
-  }
-  
-  .menu {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .menu li {
-    margin: 12px 0;
-  }
-  
+  /* Layout (app) */
+  .container{display:flex;height:calc(100vh - 88px)}
+  /* ================================
+     🗂️ SIDEBAR — Elegant Sales Dashboard
+     ================================ */
+     .sidebar {
+      width: 260px;
+      background: linear-gradient(180deg, #ffffff 0%, #faf5e6 100%);
+      border-right: 2px solid rgba(201, 163, 75, 0.25);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      box-shadow: 4px 0 20px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      z-index: 90;
+    }
+    
+    .sidebar.hidden {
+      transform: translateX(-120%);
+    }
+    
+    .sidebar-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+    
+    .sidebar h4 {
+      font-family: "Georgia", serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--accent);
+      margin: 0;
+      position: relative;
+    }
+    
+    .sidebar h4::after {
+      content: "";
+      display: block;
+      width: 36px;
+      height: 3px;
+      background: var(--gold);
+      margin-top: 6px;
+      border-radius: 10px;
+    }
+    
+    /* Toggle Button */
+    .sidebar-toggle {
+      background: linear-gradient(135deg, #c9a34b, #e7ba40);
+      border: none;
+      border-radius: 10px;
+      color: white;
+      padding: 6px 12px;
+      font-size: 14px;
+      cursor: pointer;
+      box-shadow: 0 3px 10px rgba(201, 163, 75, 0.4);
+      transition: all 0.3s ease;
+    }
+    
+    .sidebar-toggle:hover {
+      background: linear-gradient(135deg, #b48f33, #e1b243);
+      transform: scale(1.05);
+    }
+    
+    /* Menu Links */
+    .menu {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .menu li {
+      font-size: 15px;
+    }
+    
+    .menu a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-weight: 600;
+      text-decoration: none;
+      color: var(--accent);
+      background: rgba(255, 255, 255, 0.4);
+      border: 1px solid rgba(201, 163, 75, 0.15);
+      transition: all 0.3s ease;
+    }
+    
+    .menu a:hover {
+      background: linear-gradient(135deg, #c9a34b, #e7ba40);
+      color: #fff;
+      transform: translateX(4px);
+      box-shadow: 0 3px 12px rgba(201, 163, 75, 0.4);
+    }
+    
+    /* User Label (bottom info) */
+    .user-label {
+      margin-top: auto;
+      font-size: 13px;
+      color: #6b7280;
+      text-align: center;
+      border-top: 1px solid rgba(201, 163, 75, 0.2);
+      padding-top: 12px;
+      font-style: italic;
+    }
+    
+    /* Sidebar Glow Effect */
+    .sidebar::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: -1px;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(180deg, #c9a34b, transparent);
+      opacity: 0.6;
+    }
+    
+  /* Buttons */
   .btn {
     display: inline-block;
     padding: 10px 14px;
-    border-radius: 10px;
-    border: 1px solid #e5e7eb;
+    min-width: 120px;         
+    text-align: center;       
+    border-radius: 20px;
+    border: 1.5px solid #e5e7eb;
     background: transparent;
     color: var(--accent);
+    font-size: 15px;
+    font-weight: 500;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.25s ease;
   }
   
   .btn:hover {
@@ -126,321 +327,474 @@
     color: white;
   }
   
-  
-  main {
-    flex: 1;
-    padding: 34px;
-    overflow: auto;
-  }
-  
-  .hero {
-    display: grid;
-    grid-template-columns: 1fr 360px;
-    gap: 28px;
-    align-items: center;
-  }
-  
-  .eyebrow {
-    font-size: 13px;
-    color: white;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-  
-  h1 {
-    font-family: Georgia, serif;
-    font-size: 36px;
-    margin: 8px 0;
-  }
-  
-  .lead {
-    color: white;
-    max-width: 640px;
-  }
-  
-  .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 14px;
-    margin-top: 22px;
-  }
-  
-  .card {
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 6px 20px rgba(15, 23, 36, 0.04);
-  }
-  
-  .card img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    display: block;
-  }
-  
-  .panel {
-    background-image: url(../img/bgg.jpg);
-    border-radius: 12px;
-    padding: 18px;
-    margin-top: 2rem;
-    box-shadow: 0 10px 30px rgba(15, 23, 36, 0.06);
-  }
-  
-  .tiny {
-    font-size: 13px;
-    color: black;
-  }
-  
-  .hidden {
-    display: none;
-  }
-  
-  .actions {
-    display: flex;
-    gap: 10px;
-    margin-top: 12px;
-  }
-  
-  .preview-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
-    margin-top: 8px;
-  }
-  
-  .preview-grid img {
-    width: 100%;
-    height: 90px;
-    object-fit: cover;
-  }
-  
-  .steps {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 14px;
-  }
-  
-  .step {
-    padding: 8px 12px;
-    border-radius: 999px;
-    border: 1px solid #eee;
-    font-size: 13px;
-    color: var(--muted);
-  }
-  
-  .step.active {
+  /* Optional: make .btn-primary have same size consistency */
+  .btn-primary {
+    min-width: 120px;
+    text-align: center;
     background: var(--accent);
     color: white;
-    border: 0;
+    border: none;
   }
   
-  .user-label {
-    margin-top: auto;
-    font-size: 13px;
-    color: var(--muted);
+  .btnM{
+    display:inline-flex;align-items:center;justify-content:center;min-width:120px;height:42px;padding:0 18px;border-radius:20px;
+    font-size:13px;font-weight:500;border:1px solid #e5e7eb;background-color:#0b0c0e;color:white;cursor:pointer;
   }
+  .btnM:hover{background:white;color:#000}
   
-  footer {
-    padding: 22px 32px;
-    border-top: 1px solid #f3f4f6;
-    background-image: url(../img/bg.jpg);
-    text-align: center;
-    color: var(--muted);
+  /* Main */
+  main{flex:1;padding:34px;overflow:auto}
+  .hero{display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:center}
+  .eyebrow{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
+  h1{font-family:Georgia,serif;font-size:36px;margin:8px 0}
+  .lead{color:var(--muted);max-width:640px}
+  
+  .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:22px}
+  .card{background:white;border-radius:10px;overflow:hidden;box-shadow:0 6px 20px rgba(15,23,36,0.04)}
+  .card img{width:100%;height:220px;object-fit:cover;display:block}
+  
+  /* Panels & preview */
+  .panel{background:white;border-radius:12px;padding:18px;box-shadow:0 10px 30px rgba(15,23,36,0.06)}
+  .tiny{font-size:13px;color:var(--muted)}
+  .hidden{display:none}
+  .actions{display:flex;gap:10px;margin-top:12px}
+  .preview-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px}
+  .preview-grid img{width:100%;height:180px;object-fit:cover;border-radius:8px;transition:transform .25s}
+  .preview-grid img:hover{transform:scale(1.03)}
+  
+  /* Steps */
+  .steps{display:flex;gap:10px;margin-bottom:14px}
+  .step{padding:8px 12px;border-radius:999px;border:1px solid #eee;font-size:13px;color:var(--muted)}
+  .step.active{background:var(--accent);color:white;border:0}
+  
+  /* Admin table + sales */
+  #adminTable{width:100%;border-collapse:collapse;margin-top:12px}
+  #adminTable th,#adminTable td{border:1px solid #ddd;padding:8px;text-align:center;font-size:13px}
+  #adminTable th{background:#0b0c0e;color:#fff}
+  .sales-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:18px}
+  .sales-card{background:white;border-radius:12px;padding:24px;box-shadow:0 8px 22px rgba(0,0,0,0.08);text-align:center}
+  .sales-card p{font-size:22px;font-weight:600;color:var(--accent)}
+  
+  /* Admin action buttons */
+  #adminDashboard .action-btn{border:none;padding:6px 10px;border-radius:6px;cursor:pointer;font-size:13px;color:white;margin:0 4px}
+  #adminDashboard .delete-btn{background:#dc2626}
+  #adminDashboard .paid-btn{background:#16a34a}
+  #adminDashboard .pending-btn{background:#ca8a04}
+  
+  /* Overlay (login/register) */
+  #overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.6);
+    backdrop-filter:blur(1px);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:1000
   }
-  
-  /* ===============================
-     RESPONSIVE
-  =============================== */
-  @media (max-width: 880px) {
-    .hero {
-      grid-template-columns: 1fr;
-    }
-    .sidebar {
-      display: none;
-    }
-    .container {
-      flex-direction: column;
-    }
-    .logo .mark {
-      width: 44px;
-      height: 44px;
-    }
-  }
-  
-  /* ===============================
-     DARK GLASS OVERLAY (LOGIN / REGISTER)
-  =============================== */
-  
-  #overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(6px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    animation: fadeIn 0.5s ease forwards;
-  }
-  
-  #overlay.hidden {
-    display: none;
+  #overlay.hidden{
+    display:none
   }
   
   #overlayContent {
     background: rgba(20, 20, 25, 0.85);
     border: 1px solid rgba(201, 163, 75, 0.4);
-    border-radius: 20px;
-    padding: 40px 50px;
+    border-radius: 16px;
+    padding: 50px 60px; /* more inner spacing */
     width: 100%;
-    max-width: 420px;
-    box-shadow: 0 0 25px rgba(201, 163, 75, 0.2);
+    color: whitesmoke;
+    max-width: 500px;   /* wider container */
+    box-shadow: 0 0 30px rgba(201, 163, 75, 0.25);
     text-align: center;
     position: relative;
     animation: fadeUp 0.6s ease forwards;
   }
-  
-  /* BG logo inside overlay */
-  #overlayContent::before {
-    content: 'BG';
-    display: block;
-    font-family: 'Georgia', serif;
-    font-size: 48px;
-    color: var(--gold);
-    margin-bottom: 15px;
-  }
-  
-  #overlayContent h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    color: #f5f5f5;
-    letter-spacing: 1px;
-  }
-  
-  #overlayContent form {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    margin-top: 20px;
-  }
-  
-  #overlayContent input {
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(201, 163, 75, 0.4);
-    color: #f5f5f5;
-    padding: 12px 14px;
-    border-radius: 10px;
-    font-size: 14px;
-    transition: border 0.3s ease;
-  }
-  
-  #overlayContent input:focus {
-    outline: none;
-    border-color: var(--gold);
-  }
-  
   #overlayContent .actions {
     display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
+    justify-content: center;   /* Centers the buttons */
+    gap: 25px;                 /* Adjust spacing between Cancel and Login */
+    margin-top: 20px;          /* Adds space above buttons */
   }
   
-  .close-btn {
-    position: absolute;
-    top: 14px;
-    right: 18px;
-    background: none;
-    border: none;
-    color: #f5f5f5;
-    font-size: 26px;
-    cursor: pointer;
-    transition: color 0.2s ease;
-  }
-  
-  .close-btn:hover {
-    color: var(--gold);
-  }
-  
-  /* ===============================
-     MODALS (Thank You / Confirm)
-  =============================== */
-  #modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(6px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    animation: fadeIn 0.5s ease forwards;
-  }
-  
-  #modal.hidden {
-    display: none;
-  }
-  
-  .modal-card {
-    background: rgba(20, 20, 25, 0.85);
-    border: 1px solid rgba(201, 163, 75, 0.4);
+  #overlayContent .actions .btn {
+    min-width: 120px;          /* Makes buttons same width */
+    padding: 10px 18px;
     border-radius: 20px;
-    padding: 40px 50px;
-    box-shadow: 0 0 25px rgba(201, 163, 75, 0.2);
-    text-align: center;
-    max-width: 420px;
-    animation: fadeUp 0.6s ease forwards;
+    font-size: 14px;
+  }
+  #overlayContent::before{
+    content:'BG';
+    display:block;
+    font-family:Georgia,serif;
+    font-size:48px;
+    color:var(--gold);
+    margin-bottom:12px
+  }
+  #overlayContent input, #overlayContent textarea, #overlayContent select{
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(201,163,75,0.2);
+    color:#f5f5f5;
+    padding:12px;
+    border-radius:10px;
+    width:100%
   }
   
-  .modal-card h2 {
-    color: #f5f5f5;
+  /* Footer */
+  footer{
+    padding:22px 32px;
+    border-top:1px solid hsl(220, 14%, 96%);
+    background:rgb(231, 186, 64);
+    text-align:center;
+    color:var(--muted)
+  }
+  /* ================================
+     🛒 SALES SYSTEM / BOOKING DESIGN
+     ================================ */
+  
+  /* Booking Flow Container */
+  #bookingFlow .panel {
+    background: linear-gradient(180deg, #ffffff, #f9f9f9);
+    border: 1px solid rgba(201, 163, 75, 0.25);
+    border-radius: 18px;
+    padding: 40px 50px;
+    max-width: 900px;
+    margin: 30px auto;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+  }
+  
+  #bookingFlow h4 {
+    font-family: 'Georgia', serif;
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: var(--accent);
+  }
+  
+  /* Step Indicators */
+  #bookingFlow .steps {
+    display: flex;
+    justify-content: space-between;
+    background: rgba(201, 163, 75, 0.1);
+    border-radius: 50px;
+    padding: 8px 14px;
+    margin-bottom: 30px;
+  }
+  
+  #bookingFlow .step {
+    flex: 1;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+    color: #6b7280;
+    padding: 8px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+  }
+  
+  #bookingFlow .step.active {
+    background: var(--gold);
+    color: #fff;
+    box-shadow: 0 3px 10px rgba(201, 163, 75, 0.4);
+  }
+  
+  /* Form Inputs */
+  #bookingFlow input,
+  #bookingFlow select,
+  #bookingFlow textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    font-size: 14px;
+    color: var(--accent);
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    transition: border-color 0.2s ease;
+  }
+  
+  #bookingFlow input:focus,
+  #bookingFlow select:focus,
+  #bookingFlow textarea:focus {
+    border-color: var(--gold);
+    outline: none;
+  }
+  
+  /* Actions (Buttons Row) */
+  #bookingFlow .actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 24px;
+  }
+  
+  /* Buttons (reuse global but give subtle shadow here) */
+  #bookingFlow .btn,
+  #bookingFlow .btn-primary {
+    min-width: 120px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+  }
+  
+  #bookingFlow .btn:hover,
+  #bookingFlow .btn-primary:hover {
+    transform: translateY(-2px);
+  }
+  
+  /* Theme Preview (sales-like image grid) */
+  #themePreview {
+    margin-top: 24px;
+  }
+  
+  #previewImages {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+  }
+  
+  #previewImages img {
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  
+  #previewImages img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 30px rgba(201, 163, 75, 0.3);
+  }
+  
+  /* Confirm + Payment Summary */
+  #confirmSummary {
+    background: #fff7e6;
+    border: 1px solid rgba(201, 163, 75, 0.25);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin: 20px 0;
+    color: var(--accent);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Payment Section */
+  #stepPayment form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  
+  #stepPayment .split {
+    display: flex;
+    gap: 12px;
+  }
+  
+  #stepPayment input {
+    background: #fff;
+  }
+  
+  /* Thank You Panel (Sales Confirmation) */
+  #thankYou .panel {
+    background: linear-gradient(180deg, #fffdf8, #faf5e6);
+    border: 1px solid rgba(201, 163, 75, 0.3);
+    box-shadow: 0 8px 25px rgba(201, 163, 75, 0.3);
+    text-align: center;
+    padding: 60px;
+    border-radius: 18px;
+  }
+  
+  #thankYou h2 {
+    color: var(--accent);
+    font-family: Georgia, serif;
     margin-bottom: 10px;
   }
   
-  .modal-card p {
-    color: #ccc;
-    font-size: 14px;
-    line-height: 1.5;
+  #thankYou p {
+    font-size: 15px;
+    color: #6b7280;
+    margin-bottom: 20px;
   }
+  /* ================================
+     🏠 HOME PAGE — SALES SYSTEM DESIGN
+     ================================ */
   
-  /* ===============================
-     ANIMATIONS
-  =============================== */
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
+     #homePage {
+      background: linear-gradient(180deg, #fffdf8, #faf5e6);
+      border-radius: 16px;
+      padding: 40px 50px;
+      box-shadow: 0 8px 25px rgba(201, 163, 75, 0.15);
+      max-width: 1200px;
+      margin: 40px auto;
+    }
+    
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 350px;
+      gap: 40px;
+      align-items: start;
+    }
+    
+    /* Hero Text Section */
+    .hero h1 {
+      font-family: 'Georgia', serif;
+      font-size: 38px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 14px;
+    }
+    
+    .hero .lead {
+      font-size: 16px;
+      line-height: 1.7;
+      color: #4b5563;
+      margin-bottom: 30px;
+    }
+    
+    .hero .eyebrow {
+      font-size: 13px;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-weight: 600;
+    }
+    
+    /* Featured Gallery — Product-like Cards */
+    #featuredGallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+    
+    #featuredGallery .card {
+      border-radius: 14px;
+      background: #fff;
+      overflow: hidden;
+      border: 1px solid rgba(201, 163, 75, 0.2);
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    
+    #featuredGallery .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 22px rgba(201, 163, 75, 0.25);
+    }
+    
+    #featuredGallery img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+    
+    #featuredGallery .card::after {
+      content: "View Details";
+      display: block;
+      text-align: center;
+      padding: 10px 0;
+      font-size: 14px;
+      font-weight: 600;
+      background: rgba(201, 163, 75, 0.1);
+      color: var(--accent);
+    }
+    
+    /* Right Panel — Sales Sidebar */
+    .hero .panel {
+      background: #fff;
+      border-radius: 14px;
+      margin-top: 2rem;
+      border: 1px solid rgba(201, 163, 75, 0.25);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+      padding: 28px;
+    }
+    
+    .availability {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+      position: relative;
+    }
+    
+    .availability .tiny {
+      color: #6b7280;
+    }
+    
+    .availability .date {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    
+    .panel hr {
+      border: 0;
+      border-top: 1px solid rgba(201, 163, 75, 0.2);
+      margin: 20px 0;
+    }
+    
+    .why strong {
+      font-family: Georgia, serif;
+      font-size: 16px;
+      display: block;
+      margin-bottom: 10px;
+      color: var(--accent);
+    }
+    
+    .why ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .why ul li {
+      font-size: 14px;
+      margin-bottom: 8px;
+      padding-left: 20px;
+      position: relative;
+      color: #4b5563;
+    }
+    
+    .why ul li::before {
+      content: "✔";
+      color: var(--gold);
+      position: absolute;
+      left: 0;
+    }
+    
+    /* CTA Buttons */
+    #bookNowCta {
+      background: var(--gold);
+      color: #fff;
+      font-weight: 600;
+      border-radius: 12px;
+      border: none;
+      padding: 10px 18px;
+      transition: all 0.3s ease;
+    }
+    
+    #bookNowCta:hover {
+      background: #b5892f;
+      transform: scale(1.05);
+    }
+    
+    /* Subtle glow around main container */
+    #homePage::before {
+      content: "";
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      right: -20px;
+      bottom: -20px;
+      z-index: -1;
+      border-radius: 20px;
+      background: radial-gradient(circle at center, rgba(201, 163, 75, 0.1), transparent);
+    }
+    
   
-  @keyframes fadeUp {
-    from {
-      transform: translateY(30px);
-      opacity: 0;
-    }
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-  
-  /* ===============================
-     RESPONSIVE - OVERLAY
-  =============================== */
-  @media (max-width: 480px) {
-    #overlayContent {
-      padding: 30px 25px;
-      max-width: 90%;
-    }
-    #overlayContent h3 {
-      font-size: 20px;
-    }
-    #overlayContent::before {
-      font-size: 40px;
-    }
+  /* Responsiveness */
+  @media (max-width:880px){
+    .hero{grid-template-columns:1fr}
+    .sidebar{display:none}
+    .container{flex-direction:column}
+    .logo .mark{width:44px;height:44px}
   }
   
