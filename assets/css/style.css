@@ -2,7 +2,7 @@
     --accent:#0b0c0e; --muted:#6b7280; --gold:#c9a34b; --bg:#fbfbfb;
   }
   /* ================================
-     🌟 HEADER — Professional Sales Look
+     🌟 HEADER
      ================================ */
      header {
       display: flex;
@@ -86,7 +86,7 @@
     }
     
     nav .btn-primary {
-      background: linear-gradient(135deg, #040302, #e7ba40);
+      background: linear-gradient(135deg, #040302, #b28b28);
       color: #fff;
       font-weight: 700;
       box-shadow: 0 4px 12px rgba(201, 163, 75, 0.4);
@@ -150,7 +150,11 @@
   
   /* Nav */
   nav a, nav button { margin-left:14px; }
-  .contact-info{margin-right:22px;color:var(--muted);font-size:14px}
+  .contact-info{
+    margin-right:22px;
+    color:var(--muted);
+    font-size:16px
+}
   
   /* Guest landing */
   .guest-home{
@@ -172,17 +176,29 @@
     text-align:center;
     box-shadow:0 20px 60px rgba(0,0,0,0.6);
   }
-  .guest-logo{font-family:Georgia,serif;font-size:64px;color:var(--gold);margin-bottom:12px}
-  .guest-sub{color:rgba(245,245,245,0.7);margin-bottom:24px}
+  .guest-logo{
+    font-family:Georgia,serif;
+    font-size:64px;color:var(--gold);
+    margin-bottom:12px
+}
+  .guest-sub{
+    color:rgba(245,245,245,0.7);
+    margin-bottom:24px
+}
   .guest-actions{
     display:flex;
     gap:15px;
     justify-content:center
   }
-  .guest-actions .btn{border-color:rgba(201,163,75,0.4);color:var(--gold)}
-  .guest-actions .btn:hover{background:var(--gold);color:#0b0c0e}
+  .guest-actions .btn{
+    border-color:rgba(201,163,75,0.4);
+    color:var(--gold)
+}
+  .guest-actions .btn:hover{
+    background:var(--gold);
+    color:#0b0c0e
+}
   
-  /* Layout (app) */
   .container{display:flex;height:calc(100vh - 88px)}
   /* ================================
      🗂️ SIDEBAR — Elegant Sales Dashboard
@@ -306,42 +322,59 @@
       opacity: 0.6;
     }
     
-  /* Buttons */
-  .btn {
-    display: inline-block;
-    padding: 10px 14px;
-    min-width: 120px;         
-    text-align: center;       
-    border-radius: 20px;
-    border: 1.5px solid #e5e7eb;
-    background: transparent;
-    color: var(--accent);
-    font-size: 15px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.25s ease;
-  }
-  
-  .btn:hover {
-    background: var(--accent);
-    color: white;
-  }
-  
-  /* Optional: make .btn-primary have same size consistency */
-  .btn-primary {
-    min-width: 120px;
-    text-align: center;
-    background: var(--accent);
-    color: white;
-    border: none;
-  }
-  
-  .btnM{
-    display:inline-flex;align-items:center;justify-content:center;min-width:120px;height:42px;padding:0 18px;border-radius:20px;
-    font-size:13px;font-weight:500;border:1px solid #e5e7eb;background-color:#0b0c0e;color:white;cursor:pointer;
-  }
-  .btnM:hover{background:white;color:#000}
-  
+.btn,
+.btn-primary,
+.btnM {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 180px;    
+  height: 46px;        
+  padding: 0 20px;      
+  border-radius: 25px;   
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-sizing: border-box;
+}
+
+.btn {
+  background: transparent;
+  color: var(--accent);
+  border: 1.5px solid #e5e7eb;
+}
+
+.btn:hover {
+  background: var(--accent);
+  color: white;
+}
+
+.btn-primary {
+  background: var(--gold);
+  border: none;
+  color: white;
+  box-shadow: 0 3px 10px rgba(201, 163, 75, 0.4);
+}
+
+.btn-primary:hover {
+  background: #b9922e;
+  transform: translateY(-2px);
+}
+
+/* Sidebar/Minor Buttons */
+.btnM {
+  background-color: #0b0c0e;
+  border: 1px solid #e5e7eb;
+  color: white;
+}
+
+.btnM:hover {
+  background-color: white;
+  color: #0b0c0e;
+  transform: scale(1.03);
+}
+
   /* Main */
   main{flex:1;padding:34px;overflow:auto}
   .hero{display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:center}
@@ -363,9 +396,23 @@
   .preview-grid img:hover{transform:scale(1.03)}
   
   /* Steps */
-  .steps{display:flex;gap:10px;margin-bottom:14px}
-  .step{padding:8px 12px;border-radius:999px;border:1px solid #eee;font-size:13px;color:var(--muted)}
-  .step.active{background:var(--accent);color:white;border:0}
+  .steps{
+    display:flex;
+    gap:10px;
+    margin-bottom:14px
+}
+  .step{
+    padding:8px 12px;
+    border-radius:1000px;
+    border:1px solid #eee;
+    font-size:13px;
+    color:var(--muted)
+}
+  .step.active{
+    background:var(--accent);
+    color:white;
+    border:0
+}
   
   /* Admin table + sales */
   #adminTable{width:100%;border-collapse:collapse;margin-top:12px}

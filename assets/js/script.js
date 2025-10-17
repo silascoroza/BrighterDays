@@ -1,16 +1,12 @@
-// Brighter Days Photography PH - script.js
-// Full interactive booking system + admin/sales/portfolio
-// Works entirely in-browser using localStorage (demo).
-
 const sampleImages = [
-    'https://scontent.fmnl25-6.fna.fbcdn.net/v/t39.30808-6/537141328_620558844458774_3155269388450291141_n.jpg',
-    'https://scontent.fmnl25-7.fna.fbcdn.net/v/t39.30808-6/514481433_582619544919371_6276285762070203654_n.jpg',
-    'https://scontent.fmnl25-6.fna.fbcdn.net/v/t39.30808-6/535004763_620559201125405_8258268020115992210_n.jpg',
-    'https://scontent.fmnl15-1.fna.fbcdn.net/v/t39.30808-6/478728845_473847892463204_2707422079504110641_n.jpg',
-    'https://scontent.fmnl15-1.fna.fbcdn.net/v/t39.30808-6/495454484_537352606112732_3826383859083215469_n.jpg',
-    'https://scontent.fmnl15-1.fna.fbcdn.net/v/t39.30808-6/490127069_518955017952491_8498797780707576321_n.jpg',
-    'https://scontent.fmnl25-6.fna.fbcdn.net/v/t39.30808-6/514481433_582619544919371_6276285762070203654_n.jpg',
-    'https://scontent.fmnl25-6.fna.fbcdn.net/v/t39.30808-6/495454484_537352606112732_3826383859083215469_n.jpg'
+    'https://scontent.fmnl13-1.fna.fbcdn.net/v/t39.30808-6/563050409_666397329874925_5509937055450794615_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_ohc=IjlSbpsCiscQ7kNvwH4sJ5C&_nc_oc=Adkxk2zU2xXVzGOyYWnRvTM-fgOTvl8hvr0bywtfsCfM4IzM5G1N9fGBQ2oLfUhRi7Y&_nc_zt=23&_nc_ht=scontent.fmnl13-1.fna&_nc_gid=9fyf5HkuZJhfpsSmn8epuQ&oh=00_Afdp6uH4ux5qhlpmmrSzm7syK7xz5z65nQKb29ip_iNNog&oe=68F8603D',
+    'https://scontent.fmnl13-1.fna.fbcdn.net/v/t39.30808-6/557341242_653428837838441_2411231550241371218_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_ohc=9GEPhVnFEtEQ7kNvwFElTPi&_nc_oc=Adk-cC5Cpbmgb0L74JacQp6ajzmr8Jn7HirioYT4BXqy1h5KlBybNEm82ITWZ_b0hyI&_nc_zt=23&_nc_ht=scontent.fmnl13-1.fna&_nc_gid=UydzqFffaKzVIDcjHJfOnw&oh=00_AfdD4Ou1ZJgNw_1WI-bBcUb0llEgJAwAJllyP0hL-At9Mw&oe=68F838CB',
+    'https://scontent.fmnl13-2.fna.fbcdn.net/v/t39.30808-6/544412668_633383276509664_960114027047868067_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_ohc=5XercK6Oi8kQ7kNvwEvDm4u&_nc_oc=AdlS6rw96njsbef_25oftVF4S7N5J8WLQ6BgrftokqNxVzR2aK91V_o94YTnqnkfdF0&_nc_zt=23&_nc_ht=scontent.fmnl13-2.fna&_nc_gid=_St7qJqi_fZomVD_E9akug&oh=00_Afc28mf_KxWgHhoMW-nTtNZVrA5DIKHfr3Xa5lPal-eX9A&oe=68F84D28',
+    'https://scontent.fmnl13-4.fna.fbcdn.net/v/t39.30808-6/518345864_592540030593989_8929812627456003761_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_ohc=9PGhToSxfUoQ7kNvwFZQLsM&_nc_oc=Adm4s1eCUKaBsiIbISfAB3DQdvRAJH2K_j8U2uIvmw9q4gAzbAAFjTJ2bL40AdQcjZs&_nc_zt=23&_nc_ht=scontent.fmnl13-4.fna&_nc_gid=_7UbFDdIVdhwEFUvlvStwg&oh=00_Afe8ku1-RHfIYOca0i3kKrcyrM-A2wmNLTc07jHD-OAojw&oe=68F8362E',
+    'https://scontent.fmnl13-2.fna.fbcdn.net/v/t39.30808-6/499897926_553153157866010_7937707302290700563_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_ohc=3bd-Kp4lv6oQ7kNvwEoOSJB&_nc_oc=AdkJMCi8iWxs6PP50y0KjPxYJpgaat0kCgh2v2z2ASG1ukYYlpgibAL4vfhe-AwBnO0&_nc_zt=23&_nc_ht=scontent.fmnl13-2.fna&_nc_gid=oTM6N-YhEZO3br-xYW4dPA&oh=00_AffpUTNEe1xr6EfjFPvTo8P2T5LW1Nz0TTK5xJ9kRBPi0w&oe=68F854DC',
+    'https://scontent.fmnl13-4.fna.fbcdn.net/v/t39.30808-6/494916056_537353049446021_4809418469713332215_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_ohc=Gk_xIdQwIPcQ7kNvwHRyCTE&_nc_oc=AdnvLNUzTNpQC9n1G3bc5CnhTWkElBlRRFbpRRs1IGfbxy4HLVcPjEtkO9TmI7SrBYE&_nc_zt=23&_nc_ht=scontent.fmnl13-4.fna&_nc_gid=MnRYFIShJE2d63siQYzNcg&oh=00_AffeAWIFNuLdnV1M8PHQYyZsvSBJ6Td_1wqJ-8FLs70qoQ&oe=68F86758',
+    'https://scontent.fmnl13-1.fna.fbcdn.net/v/t39.30808-6/492334498_524992287348764_2920401309094397702_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_ohc=SlO2ZvCHfAEQ7kNvwEOwbmO&_nc_oc=Adk77iN3JEDiUDjRZsX6v1D1vCZ0STi1Hd4vK8v5izK7YhGkaxbYfvo6ax5ug5Y3ZQo&_nc_zt=23&_nc_ht=scontent.fmnl13-1.fna&_nc_gid=dxLhjOTzNebedXexDZn3tQ&oh=00_AfdOw5pYEGBxbty_9v8GjUuufnOnM8M7bfXwrHoiSYu71Q&oe=68F859CE',
+    'https://scontent.fmnl13-3.fna.fbcdn.net/v/t39.30808-6/491090792_524519420729384_2353316550167970562_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_ohc=BPksM8VBotsQ7kNvwG5DBVW&_nc_oc=Adm4F6UvZxsG-0T9i9dr16OigbduqV3uc1Gxlbv1qsO-6wvFkIZmWtMcwX2GIPzFxoA&_nc_zt=23&_nc_ht=scontent.fmnl13-3.fna&_nc_gid=ZiJLOa5HBHEq8lbO1kVe5Q&oh=00_AffRCCqiq1aeYLC7-5n3SSV8DcxCokD_M-t_146KvTIu-g&oe=68F8616E'
   ];
   
     
